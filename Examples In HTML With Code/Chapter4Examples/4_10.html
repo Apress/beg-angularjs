@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filter Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="../Chapter4Examples/Js/myAppModule.js"></script>
+</head>
+
+<body ng-app="myAppModule" ng-controller="MyFilterDemoCtrl">
+
+    <p>Plan type: {{data.plan}}</p>
+    <p>Plan type: {{data.plan | stripDashes}}</p>
+
+    <!-- Display customer name in title case -->
+    <p>First Name: {{data.firstName | toTitleCase}}</p>
+    <p>Surname: {{data.surname | toTitleCase}}</p>
+    <p>Full Name: {{ data.firstName + data.surname | toTitleCase}}</p>
+
+</body>
+
+</html>
