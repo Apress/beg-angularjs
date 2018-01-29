@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myAppModule">
+
+<head>
+    <title>Directives Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="../Chapter5Examples/Js/myAppModule.js"></script>
+    <link href="../Chapter5Examples/Style/5_1.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="myProductDetailCtrl">
+
+    <h2>AngularJS Socks</h2>
+
+
+    <p>Keep warm this winter with our 100% wool, 100% cool, AngularJS socks!</p>
+
+    <button ng-click="showHideColors()" type="button">
+    {{isHidden ? 'Show Available Colors' : 'Hide Available Colors'}}
+</button>
+
+    <div id="red" ng-hide="isHidden">Red</div>
+    <div id="green" ng-hide="isHidden">Green</div>
+    <div id="blue" ng-hide="isHidden">Blue</div>
+    <div id="purple" ng-hide="isHidden">Purple</div>
+    <div id="gray" ng-hide="isHidden">Dark Slate Gray</div>
+    <div id="olive" ng-hide="isHidden">Olive</div>
+
+</body>
+
+</html>
