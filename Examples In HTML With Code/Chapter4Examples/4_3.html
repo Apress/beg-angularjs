@@ -1,0 +1,50 @@
+<!DOCTYPE.html>
+<html>
+
+<head>
+    <title>Listing 4-2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script>
+        function MyFilterDemoCtrl($scope) {
+            var someData = {
+                firstName: 'Serkan',
+                surname: 'GUnaydin',
+                dateJoined: new Date(2010, 2, 23),
+                consumption: 123.659855,
+                plan: 'super-basic-plan'
+            };
+            $scope.data = someData;
+
+        }
+    </script>
+</head>
+
+<body ng-app ng-controller="MyFilterDemoCtrl">
+    <p>
+        <!--Unfiltered data-->
+        <strong>First Name</strong>: {{data.firstName}}<br/>
+        <strong>Last Name</strong> : {{data.surname}}
+    </p>
+
+    <p>
+        <!--Filtered Data-->
+        <strong>First Name</strong>: {{data.firstName | lowercase}}<br/>
+        <strong>Surname:</strong> {{data.surname | lowercase }}
+
+    </p>
+
+    <p>
+        ConsumptionL {{data.consumption}}<br/> Consumption: {{data.consumption | number}} <br/> Consumption {{data.consumption | number:2}}
+    </p>
+    <p>unfiltered: <strong>{{data.dateJoined}}</strong></p>
+    <p>medium:<strong> {{ data.dateJoined | date:'medium'}} </strong></p>
+
+    <p>mediumDate:<strong> {{ data.dateJoined | date:'mediumDate'}} </strong></p>
+
+    <p>shortDate:<strong> {{ data.dateJoined | date:'shortDate'}} </strong></p>
+
+    <p>This customer joined in the month of {{ data.dateJoined | date:'MMMM'}} on a {{ data.dateJoined | date:'EEEE'}} at {{ data.dateJoined | date:'ha'}}</p>
+
+</body>
+
+</html>

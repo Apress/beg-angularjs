@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Directives Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <script src="../Chapter6Examples/Js/myapp6_6.js"></script>
+</head>
+
+<body>
+    <div ng-app="myapp" ng-controller="MyController">
+        <form name="theForm">
+            <div>
+                <input type="text" name="firstName" ng-model="firstName"><br/>
+                <input type="button" value="Show first name" ng-click="showFirstName()" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Applying animations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.21/angular-animate.js"></script>
+    <script>
+        var app = angular.module('app', ['ngAnimate']);
+        app.controller('homeController', ['$scope', function($scope) {
+            $scope.templates = [{
+                name: 'Catie Grant',
+                url: 'C:/LeoCodeFiles/AngularJS/AngularJsBasic/Chapter9Examples/Include/catie-grant.html'
+            }, {
+                name: 'Tara Court',
+                url: 'C:/LeoCodeFiles/AngularJS/AngularJsBasic/Chapter9Examples/Include/tara-court.html'
+            }];
+            $scope.template = $scope.templates[0];
+        }]);
+    </script>
+    <style>
+        .my-slide-animation-container {
+            position: relative;
+            border: 1px solid black;
+            height: 120px;
+            overflow: hidden;
+        }
+        
+        .my-slide-animation {
+            padding-left: 5px;
+        }
+        /* set up the transition and position rules for enter and leave events */
+        
+        .my-slide-animation.ng-enter,
+        .my-slide-animation.ng-leave {
+            transition: all ease-in 0.5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        /* enter event - start class */
+        
+        .my-slide-animation.ng-enter {
+            top: -50px;
+        }
+        /* enter event - end class, leave event - start class */
+        
+        .my-slide-animation.ng-enter.ng-enter-active,
+        .my-slide-animation.ng-leave {
+            top: 0;
+        }
+        /* leave event - end class */
+        
+        .my-slide-animation.ng-leave.ng-leave-active {
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="homeController">
+        <select ng-model="template" ng-options="t.name for t in templates">
+        <option value=""> none</option>
+    </select>
+        <div class="my-slide-animation-container">
+            <div class="my-slide-animation" ng-include="template.url"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+#colorContainer div {
+    color: white;
+    text-transform: uppercase;
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}

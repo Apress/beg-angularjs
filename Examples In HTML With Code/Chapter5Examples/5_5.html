@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>Directives Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <h2>My Favourite Cities</h2>
+    <div ng-repeat="city in ['Liverpool','Perth','Sydney','Dublin','Paris']">
+
+        {{$index}}.{{city}} {{$first ? '(This is the first row)' : ''}} {{$last ? '(This is the last row)' : ''}}
+
+    </div>
+
+</body>
+
+</html>
