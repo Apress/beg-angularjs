@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A basic Transition</title>
+    <style>
+        .navButton {
+            width: 100px;
+            text-align: center;
+            padding: .3em;
+            background-color: orange;
+            color: #000000;
+            /* Transition width, color and background-color
+            over half a second. */
+            transition: width .5s, color .5s, background-color .5s
+        }
+        
+        .navButton:hover {
+            width: 110px;
+            background-color: green;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navButton">Home</div>
+    <div class="navButton">ABout us</div>
+    <div class="navButton">Contact Us</div>
+</body>
+
+</html>
